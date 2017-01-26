@@ -1,0 +1,8 @@
+FROM golang:1.7.4-alpine
+MAINTAINER stormcat24 <stormcat24@stormcat.io>
+
+RUN apk update && \
+    apk add --virtual build-dependencies build-base git && \
+    go get bitbucket.org/liamstask/goose/cmd/goose && \
+    apk del build-dependencies && \
+    rm -rf /var/cache/apk/*
