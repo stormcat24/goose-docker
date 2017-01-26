@@ -19,6 +19,5 @@ deployment:
     branch: master
     commands:
       - "docker build -t $CIRCLE_PROJECT_USERNAME/goose:latest ."
-      - "docker tag $CIRCLE_PROJECT_USERNAME/goose:latest $CIRCLE_PROJECT_USERNAME/goose:latest"
       - "docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASS"
       - "docker push $CIRCLE_PROJECT_USERNAME/goose:latest"
